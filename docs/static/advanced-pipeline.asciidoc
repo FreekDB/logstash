@@ -140,12 +140,15 @@ After processing, the sample line has the following JSON representation:
 ===== Indexing Parsed Data into Elasticsearch
 
 Now that the web logs are broken down into specific fields, the Logstash pipeline can index the data into an
-Elasticsearch cluster. Edit the `first-pipeline.conf` file to add the following text after the `input` section:
+Elasticsearch cluster. Edit the `first-pipeline.conf` file to add the following text after the `input` section
+(stdout is added to get even more direct feedback):
 
 [source,json]
 --------------------------------------------------------------------------------
 output {
     elasticsearch {
+    }
+    stdout {
     }
 }
 --------------------------------------------------------------------------------
